@@ -1,30 +1,42 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
 .page-content{
     padding-top:30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow: hidden;
 }
 .card {
-    /* Add shadows to create the "card" effect */
     border: 3px solid lightgrey;
     border-radius: 5px;
     width: 70%;
     margin-top:3%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    align-items: center;
 }
 .card-header{
     padding:1%;
     font-size: 20px;
     font-weight: 700;
+    background-color: rgb(223, 198, 223);
     border-bottom: 2px solid rgb(192, 192, 192);
     text-align: center;
 }
-.card-body{padding:5%;}
-    /* On mouse-over, add a deeper shadow */
+
+.card-body{
+    padding:5%;
+}
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .nav{
-background-color: teal;
+background-color: plum;
 list-style-type: none;
 text-align: center;
 position: fixed; top:0; width:100%;
@@ -37,4 +49,20 @@ padding: 20px;
 .nav li a{
 text-decoration: none;
 color:white
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 }
