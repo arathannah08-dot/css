@@ -36,7 +36,7 @@
         <div class="card" id="about">
             <p class="card-header">About</p>
             <p id ="para1" class="card-body">
-            Hello! Tell me about yourself<br>
+            Hello! Tell me about yourself<br><br>
             <b>Name</b><br>
             Hannah B. Arat<br>
                     
@@ -54,7 +54,7 @@
         <div class="card" id="education">
             <p class="card-header">Education</p>
             <p id="para2" class="card-body">
-            Tell us about your education<br>
+            Tell us about your education<br><br>
             Present<br>
             <b>University of Science and Technology of Southern Philippines</b><br>
             Undergraduate Level<br>
@@ -76,7 +76,7 @@
         <div class="card" id="skills">
             <p class="card-header">Skills</p>
             <p id="para3" class="card-body">
-            Tell us about your IT skills<br>
+            Tell us about your IT skills<br><br>
             Programming <br>
             Database Management <br>
             Graphic Design <br>
@@ -87,7 +87,7 @@
         <div class="card" id="portfolio">
             <p class="card-header">Portfolio</p>
             <p id="para4" class="card-body">
-            Share your IT projects<br>
+            Share your IT projects<br><br>
             <b>Basic Website Projects</b> - static websites using HTML<br>
             <b>Basic Java Programs</b> - simple console-based programs using Java<br>
             <b>UI/Website Mockups</b> - wireframes and website layouts using Figma<br>
@@ -97,7 +97,7 @@
         <div class="card" id="contact">
             <p class="card-header">Contact</p>
             <p id ="para5" class="card-body">
-            Share us your contact details<br>
+            Share us your contact details<br><br>
             <b>Email</b><br>
             arat.hannah08@gmail.com<br>
                 
@@ -108,6 +108,9 @@
             Blk-25 Lot-10, Gumamela St., Phase 3, Regency Plains Subdivision, Iponan, Cagayan de Oro City, Misamis Oriental, 9000<br>
             </p>
         </div>
+
+        <h2>Student List</h2>
+        <ul id="student-list" class="card-body"></p>
     </div>
 
     <!--Exercise no.2-->
@@ -130,6 +133,26 @@
         <p>2026 Hannah Arat | All rights reserved.</p>
     </footer>
 
+    <script>
+        const jsonURL ="https://raw.githubusercontent.com/arathannah08-dot/css/refs/heads/main/students.json";
+
+        fetch(jsonURL)
+        .then(response => response.json())
+        .then(data => {
+            let studentList = document.getElementById("student-list");
+
+            if (data.students && Array.isArray(data.students)) {
+                data.students.forEach(student => {
+                    let listItem = document.createElement("li");
+                    listItem.textContent = `${student.name} - ${student.age} (Course: ${student.course})`;
+                    studentList.appendChild(listItem);
+                });
+            } else {
+                console.error("Expected 'students' array but got: ", data);
+            }
+        })
+        .catch(error => console.error("Error fetching JSON: ", error));
+    </script>
 </body>
 
 </html>
