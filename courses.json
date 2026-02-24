@@ -164,13 +164,6 @@
     },
     {
         "year_level": "2nd Year",
-        "sem": "1st Semester",
-        "code": "EnviSci",
-        "description": "Environmental Science",
-        "credit": "3.0"
-    },
-    {
-        "year_level": "2nd Year",
         "sem": "2nd Semester",
         "code": "IT222",
         "description": "Networking 1",

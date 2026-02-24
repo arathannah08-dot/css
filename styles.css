@@ -29,7 +29,7 @@ body {
 }
 
 .card-body{
-    padding:5%;
+    padding:1%;
 }
 
 .card:hover {
@@ -66,3 +66,28 @@ color:white
     margin-right: auto;
     margin-left: auto;
 }
+
+.course-list {
+    list-style-type: none;
+    padding: 1%;
+    text-align: left;
+}
+
+.course-list l {
+    padding: 10%;
+    border-bottom: 1px;
+}
+
+.course-list:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#search {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+

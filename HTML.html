@@ -20,6 +20,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#courses">Courses</a></li>
 
     </ul> <br><br>
 
@@ -109,11 +110,17 @@
             </p>
         </div>
 
-        <h2>Student List</h2>
-        <ul id="student-list" class="card-body" style="text-align: left"></ul>
+        <div class="card" id="courses">
+            <p class="card-header">Courses</p>
+            <p id ="para6" class="card-body"></p>
 
-        <h2>Course List</h2>
-        <ul id="course-list" class="card-body" style="text-align: left"></ul>
+            <input type="text" id="search" placeholder="Search course...">
+
+            <ul id="course-list" class="course-list"></ul>
+        </div>
+        <!--<h2>Student List</h2>
+        <ul id="student-list" class="card-body" style="text-align: left"></ul>-->
+
     </div>
 
     <!--Exercise no.2-->
@@ -123,12 +130,14 @@
         const paragraph3 = document.getElementById("para3");
         const paragraph4 = document.getElementById("para4");
         const paragraph5 = document.getElementById("para5");
+        const paragraph6 = document.getElementById("para6");
 
         console.log(paragraph1);
         console.log(paragraph2);
         console.log(paragraph3);
         console.log(paragraph4);
         console.log(paragraph5);
+        console.log(paragraph6);
     </script>
 
     <footer class="footer">
@@ -136,6 +145,7 @@
         <p>2026 Hannah Arat | All rights reserved.</p>
     </footer>
 
+    <!--
     <script>
         const studentsURL ="https://raw.githubusercontent.com/arathannah08-dot/css/refs/heads/main/students.json";
 
@@ -156,6 +166,7 @@
         })
         .catch(error => console.error("Error fetching JSON: ", error));
     </script>
+    -->
 
     <script>
         const coursesURL ="https://raw.githubusercontent.com/arathannah08-dot/css/refs/heads/main/courses.json";
@@ -171,6 +182,17 @@
                     listItem.textContent = `${course.year_level} - ${course.sem} - ${course.code} : ${course.description} (${course.credit})`;
                     courseList.appendChild(listItem);
                 });
+
+                let searchBox = document.getElementById("search");
+                let courses = courseList.getElementsByTagName("li");
+
+                searchBox.onkeyup = function () {
+                let text = searchBox.value.toLowerCase();
+                for (let i = 0; i <courses.length; i++) {
+                    courses[i].style.display = courses[i].textContent.toLowerCase().includes(text) ? "": "none";
+                    }
+                };
+
             } else {
                 console.error("Expected 'courses' array but got: ", data);
             }
